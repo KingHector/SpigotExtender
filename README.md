@@ -31,5 +31,5 @@ With BuildItem & BuildSkull Methods you can do this in just one line!
 
 ```processes.buildItem(String name, List<String> lore, Material material, int quantity);```
 
-```processes.buildItem(String name, List<String> lore, UUID player, int quantity)```
+```processes.buildSkull(String name, List<String> lore, UUID player, int quantity)```
 
