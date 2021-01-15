@@ -11,6 +11,6 @@ especially if you want a multicolored one.
 
 With the Color method you can use Minecraft's ColorCodes.
 
-Example: ```player.sendMessage(processes.color("&cPhileasFogg3 is bad"));```
+Example: ```player.sendMessage(processes.color("&cPhileasFogg3 is bad!"));```
 
-Output: - PhileasFogg3 is bad
+Output: PhileasFogg3 is bad! (In red)
