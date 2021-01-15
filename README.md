@@ -4,6 +4,8 @@ A collection of usefull methods for better stability and readability of your cod
 
 ## Processes
 
+Processes contains methods that will make your code easier to write.
+
 ### Color Method
 
 Using ```ChatColor.COLOR``` in your code is not the best way to add color to your Strings as it can get really obnoxious, 
@@ -35,3 +37,4 @@ With BuildItem & BuildSkull Methods you can do this in just one line!
 NOTE: In order to add lores you need to use ```Arrays.asList()```
 
 ## MenuBuilder
+
