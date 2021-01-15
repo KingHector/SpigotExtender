@@ -1,6 +1,6 @@
 # DeveloperAPI
 
-A collection of usefull methods for better stability and readability of your code.
+A collection of useful methods for better stability, writability and readability of your code.
 
 ## Processes
 
