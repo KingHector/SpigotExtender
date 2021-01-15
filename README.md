@@ -33,3 +33,4 @@ With BuildItem & BuildSkull Methods you can do this in just one line!
 
 ```processes.buildSkull(String name, List<String> lore, UUID player, int quantity)```
 
+## MenuBuilder
