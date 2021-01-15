@@ -11,7 +11,7 @@ especially if you want a multicolored one.
 
 With the Color Dethod you can use Minecraft's ColorCodes which is more efficient and easier.
 
-Example: ```player.sendMessage(processes.color("&cPhileasFogg3 is bad!"));```
+```processes.color(<String string>);```
 
 Output: PhileasFogg3 is bad! (In red)
 
@@ -29,10 +29,7 @@ item.setItemMeta(itemMeta);
         
 With BuildItem & BuildSkull Methods you can do this in just one line!
 
-Example One: ```processes.buildItem(processes.color("&eItem"), processes.color("&cLore"), Material.IRON_INGOT, 1);```
+```processes.buildItem(String name, List<String> lore, Material material, int quantity);```
 
-Output: This will create 1 Iron Ingot named "Item" (in yellow), with the lore "Lore" (in red).
+```processes.buildItem(String name, List<String> lore, UUID player, int quantity)```
 
-Example Two: ```processes.buildItem(processes.color("&eSkull"), processes.color("&cPretty"), 77ebefb3-2bf1-485d-b5e3-d74464526993, 1);```
-
-Output: This will create 1 skull of King_Hector named "Skull" (in yellow), with the lore "Pretty" (in red).
