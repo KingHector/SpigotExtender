@@ -11,7 +11,7 @@ Processes contains methods that will make your code easier to write.
 Using `ChatColor.COLOR` in your code is not the best way to add color to your Strings as it can get really obnoxious, 
 especially if you want a multicolored one.
 
-With the Color Dethod you can use Minecraft's ColorCodes which is more efficient and easier.
+With the Color Method you can use Minecraft's ColorCodes which is more efficient and easier.
 
 `processes.color(<String string>);`
 
@@ -21,10 +21,10 @@ Output: PhileasFogg3 is bad! (In red)
 
 Normally when you need to create ItemStacks with either an item or a skull you need to do something like this:
 
-```ItemStack item = new ItemStack(material, quantity);
+```ItemStack item = new ItemStack(<material>, <quantity>);
 ItemMeta itemMeta = item.getItemMeta();
-Objects.requireNonNull(itemMeta).setDisplayName(color(name));
-itemMeta.setLore(lore);
+itemMeta.setDisplayName(color(<name>));
+itemMeta.setLore(<lore>);
 item.setItemMeta(itemMeta); 
 ```     
         
