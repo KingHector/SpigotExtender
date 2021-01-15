@@ -11,11 +11,9 @@ Processes contains methods that will make your code easier to write.
 Using `ChatColor.COLOR` in your code is not the best way to add color to your Strings as it can get really obnoxious, 
 especially if you want a multicolored one.
 
-With the Color Method you can use Minecraft's ColorCodes which is more efficient and easier.
+With the Color Method you can use Minecraft's ColorCodes which is more efficient and easier. The ColorCode should be inside the String. You can check the ColorCodes [here](https://minecraft.gamepedia.com/Formatting_codes)
 
 `processes.color(<String string>);`
-
-Output: PhileasFogg3 is bad! (In red)
 
 ### BuildItem & BuildSkull Methods
 
