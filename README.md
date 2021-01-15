@@ -33,6 +33,6 @@ Example One: ```processes.buildItem(processes.color("&eItem"), processes.color("
 
 Output: This will create 1 Iron Ingot named "Item" (in yellow), with the lore "Lore" (in red).
 
-Example Two: ```processes.buildItem(processes.color("&eSkull"), processes.color("&cPretty Boy"), 77ebefb3-2bf1-485d-b5e3-d74464526993, 1);```
+Example Two: ```processes.buildItem(processes.color("&eSkull"), processes.color("&cPretty"), 77ebefb3-2bf1-485d-b5e3-d74464526993, 1);```
 
-Output: This will create 1 skull of King_Hector named "Skull" (in yellow), with the lore "Pretty Boy" (in red).
+Output: This will create 1 skull of King_Hector named "Skull" (in yellow), with the lore "Pretty" (in red).
