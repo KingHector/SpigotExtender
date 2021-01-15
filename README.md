@@ -45,7 +45,8 @@ MenuBuilder is an easier way of creating GUI. Normally you would need a GUI clas
 You need to create a class which extends Menu.
 The `inventoryOpened`, `inventoryClosed` and `whenClicked` consumers do NOT have to be set.
 
-```public class TestMenu extends Menu 
+```
+public class TestMenu extends Menu 
 {
 
     public TestMenu() 
@@ -64,4 +65,4 @@ The `inventoryOpened`, `inventoryClosed` and `whenClicked` consumers do NOT have
         registerButton(new MenuButton(new ItemStack(Material.DIAMOND_PICKAXE)).setWhenClicked(clicked -> clicked.sendMessage("You clicked a button!")), 1);
     }
 }
-
+```
