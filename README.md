@@ -55,8 +55,8 @@ public class TestMenu extends Menu
         super("Test Menu", 1);
 
         // Set our inventory consumers.
-        setInventoryOpened(opened -> opened.sendMessage("§aYou opened the inventory!"));
-        setInventoryClosed(closed -> closed.sendMessage("§cYou closed the inventory!"));
+        setInventoryOpened(opened -> opened.sendMessage(processes.color("&aYou opened the inventory!")));
+        setInventoryClosed(closed -> closed.sendMessage(processes.color("&cYou closed the inventory!")));
 
         // Register a do-nothing button.
         registerButton(new MenuButton(new ItemStack(Material.WOODEN_PICKAXE)), 0);
