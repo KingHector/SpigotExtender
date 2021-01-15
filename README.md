@@ -8,12 +8,12 @@ Processes contains methods that will make your code easier to write.
 
 ### Color Method
 
-Using ```ChatColor.COLOR``` in your code is not the best way to add color to your Strings as it can get really obnoxious, 
+Using `ChatColor.COLOR` in your code is not the best way to add color to your Strings as it can get really obnoxious, 
 especially if you want a multicolored one.
 
 With the Color Dethod you can use Minecraft's ColorCodes which is more efficient and easier.
 
-```processes.color(<String string>);```
+`processes.color(<String string>);`
 
 Output: PhileasFogg3 is bad! (In red)
 
@@ -43,7 +43,7 @@ MenuBuilder is an easier way of creating GUI. Normally you would need a GUI clas
 ###Menu Creation
 
 You need to create a class which extends Menu.
-The `inventoryOpened`, inventoryClosed and whenClicked consumers do not have to be set. They are there for menus/buttons you wish to use them with.
+The `inventoryOpened`, `inventoryClosed` and `whenClicked` consumers do NOT have to be set.
 
 ```public class TestMenu extends Menu 
 {
