@@ -38,3 +38,5 @@ NOTE: In order to add lores you need to use ```Arrays.asList()```
 
 ## MenuBuilder
 
+MenuBuilder is an easier way of creating GUI. Normally you would need a GUI class and a GUIListener class. Using thing you can now have a complete GUI in just ONE class, which is fast to write, easy to read and more performant.
+
