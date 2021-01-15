@@ -1,6 +1,6 @@
-package net.venturekraft.venturekraftapi;
+package net.venturekraft.VentureKraftAPI;
 
-import net.venturekraft.venturekraftapi.MenuBuilder.MenuListener;
+import net.venturekraft.VentureKraftAPI.MenuBuilder.MenuListener;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 

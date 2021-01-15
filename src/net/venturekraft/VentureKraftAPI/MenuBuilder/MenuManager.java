@@ -1,4 +1,4 @@
-package net.venturekraft.venturekraftapi.MenuBuilder;
+package net.venturekraft.VentureKraftAPI.MenuBuilder;
 
 import java.util.HashMap;
 import java.util.Map;

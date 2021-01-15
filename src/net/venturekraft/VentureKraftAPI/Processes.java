@@ -1,4 +1,4 @@
-package net.venturekraft.venturekraftapi;
+package net.venturekraft.VentureKraftAPI;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;

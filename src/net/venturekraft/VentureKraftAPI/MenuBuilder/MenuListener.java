@@ -1,4 +1,4 @@
-package net.venturekraft.venturekraftapi.MenuBuilder;
+package net.venturekraft.VentureKraftAPI.MenuBuilder;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
