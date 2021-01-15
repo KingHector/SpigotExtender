@@ -19,13 +19,11 @@ Output: PhileasFogg3 is bad! (In red)
 
 Normally when you need to create ItemStacks with either an item or a skull you need to do something like this:
 
-```
-ItemStack item = new ItemStack(material, quantity);
-ItemMeta itemMeta = item.getItemMeta();
+```ItemStack item = new ItemStack(material, quantity);```
+```ItemMeta itemMeta = item.getItemMeta();```
 Objects.requireNonNull(itemMeta).setDisplayName(color(name));
 itemMeta.setLore(lore);
-item.setItemMeta(itemMeta);
-```        
+item.setItemMeta(itemMeta);     
         
 With BuildItem & BuildSkull Methods you can do this in just one line!
 
