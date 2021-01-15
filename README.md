@@ -40,3 +40,28 @@ NOTE: In order to add lores you need to use ```Arrays.asList()```
 
 MenuBuilder is an easier way of creating GUI. Normally you would need a GUI class and a GUIListener class. Using thing you can now have a complete GUI in just ONE class, which is fast to write, easy to read and more performant.
 
+###Menu Creation
+
+You need to create a class which extends Menu.
+The `inventoryOpened`, inventoryClosed and whenClicked consumers do not have to be set. They are there for menus/buttons you wish to use them with.
+
+```public class TestMenu extends Menu 
+{
+
+    public TestMenu() 
+    {
+        // Initialise our menu.
+        super("Test Menu", 1);
+
+        // Set our inventory consumers.
+        setInventoryOpened(opened -> opened.sendMessage("§aYou opened the inventory!"));
+        setInventoryClosed(closed -> closed.sendMessage("§cYou closed the inventory!"));
+
+        // Register a do-nothing button.
+        registerButton(new MenuButton(new ItemStack(Material.WOODEN_PICKAXE)), 0);
+
+        // Register an action button.
+        registerButton(new MenuButton(new ItemStack(Material.DIAMOND_PICKAXE)).setWhenClicked(clicked -> clicked.sendMessage("You clicked a button!")), 1);
+    }
+}
+
