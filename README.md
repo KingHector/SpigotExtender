@@ -1,4 +1,4 @@
-# DeveloperAPI
+# VentureKraftAPI
 
 A collection of useful methods for better stability, writability and readability of your code.
 
