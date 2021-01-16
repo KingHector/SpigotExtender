@@ -19,7 +19,7 @@ public class Processes
      * @param string String to add color to. Add the code at the start.
      * @return Returns color coded String.
      */
-    public String color (String string) { return ChatColor.translateAlternateColorCodes('&', string); }
+    public static String color (String string) { return ChatColor.translateAlternateColorCodes('&', string); }
 
     /**
      * To create ItemStacks. You cannot use this to create Player Heads, use buildSkull instead.
@@ -29,7 +29,7 @@ public class Processes
      * @param quantity Item quantity.
      * @return Returns ItemStack.
      */
-    public ItemStack buildItem(String name, List<String> lore, Material material, int quantity)
+    public static ItemStack buildItem(String name, List<String> lore, Material material, int quantity)
     {
         ItemStack item = new ItemStack(material, quantity);
         ItemMeta itemMeta = item.getItemMeta();
@@ -48,7 +48,7 @@ public class Processes
      * @param quantity Item quantity.
      * @return Returns ItemStack.
      */
-    public ItemStack buildSkull(String name, List<String> lore, UUID player, int quantity)
+    public static ItemStack buildSkull(String name, List<String> lore, UUID player, int quantity)
     {
         ItemStack playerSkull = new ItemStack(Material.PLAYER_HEAD, quantity);
         SkullMeta skullMeta = (SkullMeta) playerSkull.getItemMeta();
