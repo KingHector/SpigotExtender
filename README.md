@@ -13,7 +13,7 @@ especially if you want a multicolored one.
 
 With the Color Method you can use Minecraft's ColorCodes which is more efficient and easier. The ColorCode should be inside the String. You can check the ColorCodes [here](https://minecraft.gamepedia.com/Formatting_codes)
 
-`processes.color(<String string>);`
+`Processes.color(<String string>);`
 
 ### BuildItem & BuildSkull Methods
 
@@ -28,9 +28,9 @@ item.setItemMeta(itemMeta);
         
 With BuildItem & BuildSkull Methods you can do this in just one line!
 
-```processes.buildItem(String name, List<String> lore, Material material, int quantity);```
+```Processes.buildItem(String name, List<String> lore, Material material, int quantity);```
 
-```processes.buildSkull(String name, List<String> lore, UUID player, int quantity)```
+```Processes.buildSkull(String name, List<String> lore, UUID player, int quantity)```
 
 NOTE: In order to add lores you need to use ```Arrays.asList()```
 
