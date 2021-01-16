@@ -38,6 +38,9 @@ NOTE: In order to add lores you need to use ```Arrays.asList()```
 
 MenuBuilder is an easier way of creating GUI. Normally you would need a GUI class and a GUIListener class. Using thing you can now have a complete GUI in just ONE class, which is fast to write, easy to read and more performant.
 
+NOTE: If you intent to make GUI's using MenuBuilder you need to register the following event in your Main class, in your onEnable Method.
+`Bukkit.getPluginManager().registerEvents(new MenuListener(), this);`
+
 ### Menu Creation
 
 You need to create a class which extends Menu.
