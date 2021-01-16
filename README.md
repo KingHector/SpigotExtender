@@ -1,6 +1,6 @@
-# DeveloperAPI
+# VentureKraftAPI
 
-A collection of usefull methods for better stability and readability of your code.
+A collection of useful methods for better stability, writability and readability of your code.
 
 ## Processes
 
@@ -13,7 +13,7 @@ especially if you want a multicolored one.
 
 With the Color Method you can use Minecraft's ColorCodes which is more efficient and easier. The ColorCode should be inside the String. You can check the ColorCodes [here](https://minecraft.gamepedia.com/Formatting_codes)
 
-`processes.color(<String string>);`
+`Processes.color(<String string>);`
 
 ### BuildItem & BuildSkull Methods
 
@@ -28,15 +28,18 @@ item.setItemMeta(itemMeta);
         
 With BuildItem & BuildSkull Methods you can do this in just one line!
 
-```processes.buildItem(String name, List<String> lore, Material material, int quantity);```
+```Processes.buildItem(String name, List<String> lore, Material material, int quantity);```
 
-```processes.buildSkull(String name, List<String> lore, UUID player, int quantity)```
+```Processes.buildSkull(String name, List<String> lore, UUID player, int quantity)```
 
 NOTE: In order to add lores you need to use ```Arrays.asList()```
 
 ## MenuBuilder
 
 MenuBuilder is an easier way of creating GUI. Normally you would need a GUI class and a GUIListener class. Using thing you can now have a complete GUI in just ONE class, which is fast to write, easy to read and more performant.
+
+NOTE: If you intent to make GUI's using MenuBuilder you need to register the following event in your Main class, in your onEnable Method.
+`Bukkit.getPluginManager().registerEvents(new MenuListener(), this);`
 
 ### Menu Creation
 
