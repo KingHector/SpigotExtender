@@ -2,6 +2,7 @@ package net.venturekraft.VentureKraftAPI;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,11 +11,11 @@ import java.io.UncheckedIOException;
 public class YMLBuilder
 {
 
-    private final VentureKraftAPI core;
+    private final JavaPlugin core;
     private final File file;
     private final FileConfiguration config;
 
-    public YMLBuilder(VentureKraftAPI core, String name)
+    public YMLBuilder(JavaPlugin core, String name)
     {
         this.core = core;
         file = new File(core.getDataFolder(), name + ".yml");
