@@ -72,7 +72,7 @@ public class TestMenu extends Menu
 
 YMLBuilder is an easier way of creating .yml files from within your code.
 
-### YML Creation
+### .yml Creation
 
 In your Main class you need to do the following.
 
@@ -102,3 +102,16 @@ public class YourClass extends JavaPlugin
     
 }    
 ```
+
+### Accessing The .yml
+
+Accessing your .yml file from within your code is basically the same as it was before.
+Previously you would do this.
+
+``` main.getYourFile.getStringList()...```
+
+Now you need to do this.
+
+``` main.getYourFile.getConfig().getStringList()...```
+
+So basically after you need to add the `getConfig()` method after you get your file.
