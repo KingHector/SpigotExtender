@@ -65,9 +65,35 @@ public class TestMenu extends Menu
         // Register an action button.
         registerButton(new MenuButton(new ItemStack(Material.DIAMOND_PICKAXE)).setWhenClicked(clicked -> clicked.sendMessage("You clicked a button!")), 1);
     }
+    
 }
 ```
 ## YMLBuilder
+
 YMLBuilder is an easier way of creating .yml files from within your code.
 
 ### YML Creation
+
+In your Main class you need to do the following.
+
+```
+private YMLBuilder yourFile;
+
+private void initiateFiles()
+{
+    yourFile = new YMLBuilder(this, "yourFileName")    
+}
+
+@Override
+public void onEnable()
+{
+    initiateFiles();    
+}
+
+public YMLBuilder getYourFile() { return yourFile; }
+
+public void setYourFile(YMLBuilder yourFile)
+{
+    this.yourFile = yourFile;    
+}   
+```
