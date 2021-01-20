@@ -77,23 +77,28 @@ YMLBuilder is an easier way of creating .yml files from within your code.
 In your Main class you need to do the following.
 
 ```
-private YMLBuilder yourFile;
-
-private void initiateFiles()
+public class YourClass extends JavaPlugin
 {
-    yourFile = new YMLBuilder(this, "yourFileName")    
-}
 
-@Override
-public void onEnable()
-{
-    initiateFiles();    
-}
+    private YMLBuilder yourFile;          
 
-public YMLBuilder getYourFile() { return yourFile; }
+    private void initiateFiles()
+    {
+        yourFile = new YMLBuilder(this, "yourFileName")    
+    }
 
-public void setYourFile(YMLBuilder yourFile)
-{
-    this.yourFile = yourFile;    
-}   
+    @Override
+    public void onEnable()
+    {
+        initiateFiles();    
+    }
+
+    public YMLBuilder getYourFile() { return yourFile; }
+
+    public void setYourFile(YMLBuilder yourFile)
+    {
+        this.yourFile = yourFile;    
+    }
+    
+}    
 ```
