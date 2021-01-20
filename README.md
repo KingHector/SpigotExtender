@@ -103,15 +103,19 @@ public class YourClass extends JavaPlugin
 }    
 ```
 
-### Accessing The .yml
+### Accessing & Saving The .yml File
 
 Accessing your .yml file from within your code is basically the same as it was before.
 Previously you would do this.
 
-``` main.getYourFile.getStringList()...```
+```main.getYourFile.getStringList()...```
 
 Now you need to do this.
 
-``` main.getYourFile.getConfig().getStringList()...```
+```main.getYourFile.getConfig().getStringList()...```
 
 So basically after you need to add the `getConfig()` method after you get your file.
+
+Finally in order to save the .yml file you need to do the following.
+
+```main.getYourFile.save();```
