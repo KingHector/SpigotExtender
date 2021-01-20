@@ -68,3 +68,6 @@ public class TestMenu extends Menu
 }
 ```
 ## YMLBuilder
+YMLBuilder is an easier way of creating .yml files from within your code.
+
+### YML Creation
