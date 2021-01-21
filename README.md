@@ -68,6 +68,13 @@ public class TestMenu extends Menu
     
 }
 ```
+
+Finally in order to use this you need to do the following.
+```
+Menu testMenu = new TestMenu();
+testMenu.open(player);
+```
+
 ## YMLBuilder
 
 YMLBuilder is an easier way of creating .yml files from within your code.
