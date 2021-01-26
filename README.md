@@ -65,5 +65,64 @@ public class TestMenu extends Menu
         // Register an action button.
         registerButton(new MenuButton(new ItemStack(Material.DIAMOND_PICKAXE)).setWhenClicked(clicked -> clicked.sendMessage("You clicked a button!")), 1);
     }
+    
 }
 ```
+
+Finally in order to use this you need to do the following.
+```
+Menu testMenu = new TestMenu();
+testMenu.open(player);
+```
+
+## YMLBuilder
+
+YMLBuilder is an easier way of creating .yml files from within your code.
+
+### .yml Creation
+
+In your Main class you need to do the following.
+
+```
+public class YourClass extends JavaPlugin
+{
+
+    private YMLBuilder yourFile;          
+
+    private void initiateFiles()
+    {
+        yourFile = new YMLBuilder(this, "yourFileName")    
+    }
+
+    @Override
+    public void onEnable()
+    {
+        initiateFiles();    
+    }
+
+    public YMLBuilder getYourFile() { return yourFile; }
+
+    public void setYourFile(YMLBuilder yourFile)
+    {
+        this.yourFile = yourFile;    
+    }
+    
+}    
+```
+
+### Accessing & Saving The .yml File
+
+Accessing your .yml file from within your code is basically the same as it was before.
+Previously you would do this.
+
+```main.getYourFile.getStringList()...```
+
+Now you need to do this.
+
+```main.getYourFile.getConfig().getStringList()...```
+
+So basically after you need to add the `getConfig()` method after you get your file.
+
+Finally in order to save the .yml file you need to do the following.
+
+```main.getYourFile.save();```
