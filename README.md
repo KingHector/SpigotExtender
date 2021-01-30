@@ -6,35 +6,6 @@ Special thanks to Thorbie and the entire Stephen Kings Course Discord Community.
 
 ## Processes
 
-Processes contains methods that will make your code easier to write.
-
-### Color Method
-
-Using `ChatColor.COLOR` in your code is not the best way to add color to your Strings as it can get really obnoxious, 
-especially if you want a multicolored one.
-
-With the Color Method you can use Minecraft's ColorCodes which is more efficient and easier. The ColorCode should be inside the String. You can check the ColorCodes [here](https://minecraft.gamepedia.com/Formatting_codes)
-
-`Processes.color(<String string>);`
-
-### BuildItem & BuildSkull Methods
-
-Normally when you need to create ItemStacks with either an item or a skull you need to do something like this:
-
-```ItemStack item = new ItemStack(<material>, <quantity>);
-ItemMeta itemMeta = item.getItemMeta();
-itemMeta.setDisplayName(color(<name>));
-itemMeta.setLore(<lore>);
-item.setItemMeta(itemMeta); 
-```     
-        
-With BuildItem & BuildSkull Methods you can do this in just one line!
-
-```Processes.buildItem(String name, List<String> lore, Material material, int quantity);```
-
-```Processes.buildSkull(String name, List<String> lore, UUID player, int quantity)```
-
-NOTE: In order to add lores you need to use ```Arrays.asList()```
 
 ## MenuBuilder
 
