@@ -12,7 +12,7 @@ public class RecipeEditor
 
     /**
      * Change hte amount of recipe results.
-     * @param recipeKey the key of the recipe, no 'minecraft:' necessary.
+     * @param recipeKey the key of the recipe.
      * @param count the amount of items the recipe will yield.
      * @return false if no recipe by that key could be found, true if the change has been made.
      */

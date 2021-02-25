@@ -2,6 +2,7 @@ package net.venturekraft.VentureKraftAPI;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -20,6 +21,69 @@ public class Processes
      * @return Returns color coded String.
      */
     public static String color (String string) { return ChatColor.translateAlternateColorCodes('&', string); }
+
+    /**
+     * To get a color from a String for spigot's Color method.
+     * @param color String with the color name.
+     * @return Returns the color.
+     */
+    public static Color colorFromString (String color)
+    {
+        switch (color)
+        {
+            case "AQUA":
+                return Color.AQUA;
+
+            case "BLACK":
+                return Color.BLACK;
+
+            case "BLUE":
+                return Color.BLUE;
+
+            case "FUCHSIA":
+                return Color.FUCHSIA;
+
+            case "GRAY":
+                return Color.GRAY;
+
+            case "GREEN":
+                return Color.GREEN;
+
+            case "LIME":
+                return Color.LIME;
+
+            case "MAROON":
+                return Color.MAROON;
+
+            case "NAVY":
+                return Color.NAVY;
+
+            case "OLIVE":
+                return Color.OLIVE;
+
+            case "ORANGE":
+                return Color.ORANGE;
+
+            case "PURPLE":
+                return Color.PURPLE;
+
+            case "RED":
+                return Color.RED;
+
+            case "SILVER":
+                return Color.SILVER;
+
+            case "TEAL":
+                return Color.TEAL;
+
+            case "YELLOW":
+                return Color.YELLOW;
+
+            case "WHITE":
+
+            default: return Color.WHITE;
+        }
+    }
 
     /**
      * To create ItemStacks. You cannot use this to create Player Heads, use buildSkull instead.
