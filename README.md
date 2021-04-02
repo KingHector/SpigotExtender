@@ -6,4 +6,5 @@ For more information visit the [Wiki](https://github.com/VentureKraftDevs/Ventur
 
 Special thanks to Thorbie and the entire Stephen Kings Course Discord Community.
 
-![VentureKraftAPI](https://user-images.githubusercontent.com/62361708/113420624-51386e00-93d2-11eb-856c-aa4dd7400db6.png)
+![VentureKraftAPI](https://user-images.githubusercontent.com/62361708/113421241-6cf04400-93d3-11eb-9685-f9d20be7ac5e.png)
+
