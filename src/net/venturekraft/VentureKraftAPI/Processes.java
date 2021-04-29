@@ -11,6 +11,7 @@ import org.bukkit.inventory.meta.SkullMeta;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 public class Processes
 {
@@ -98,6 +99,7 @@ public class Processes
         ItemStack item = new ItemStack(material, quantity);
         ItemMeta itemMeta = item.getItemMeta();
         Objects.requireNonNull(itemMeta).setDisplayName(color(name));
+        lore = (lore != null) ? lore.stream().map(Processes::color).collect(Collectors.toList()) : null;
         itemMeta.setLore(lore);
         item.setItemMeta(itemMeta);
 
@@ -118,6 +120,7 @@ public class Processes
         SkullMeta skullMeta = (SkullMeta) playerSkull.getItemMeta();
         Objects.requireNonNull(skullMeta).setDisplayName(name);
         Objects.requireNonNull(skullMeta).setOwningPlayer(Bukkit.getOfflinePlayer(player));
+        lore = (lore != null) ? lore.stream().map(Processes::color).collect(Collectors.toList()) : null;
         skullMeta.setLore(lore);
         playerSkull.setItemMeta(skullMeta);
 
