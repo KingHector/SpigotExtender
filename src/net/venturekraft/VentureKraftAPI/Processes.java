@@ -143,7 +143,7 @@ public class Processes
     {
         ItemStack potion = new ItemStack(Material.POTION, quantity);
         ItemMeta itemMeta = potion.getItemMeta();
-        Objects.requireNonNull(itemMeta).setDisplayName(name);
+        Objects.requireNonNull(itemMeta).setDisplayName(color(name));
         PotionMeta potionMeta = (PotionMeta) itemMeta;
         potionMeta.setBasePotionData(effect);
         if (color != null) potionMeta.setColor(color);
