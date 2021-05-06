@@ -6,7 +6,10 @@ import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.inventory.meta.SkullMeta;
+import org.bukkit.potion.PotionData;
+import org.bukkit.potion.PotionEffect;
 
 import java.util.List;
 import java.util.Objects;
@@ -125,6 +128,30 @@ public class Processes
         playerSkull.setItemMeta(skullMeta);
 
         return playerSkull;
+    }
+
+    /**
+     * Potion Builder
+     * @param name Item name.
+     * @param lore Item lore.
+     * @param effect Potion effect.
+     * @param color Potion color.
+     * @param quantity Item quantity.
+     * @return Returns ItemStack.
+     */
+    public static ItemStack buildPotion(String name, List<String> lore, PotionData effect, Color color, int quantity)
+    {
+        ItemStack potion = new ItemStack(Material.POTION, quantity);
+        ItemMeta itemMeta = potion.getItemMeta();
+        Objects.requireNonNull(itemMeta).setDisplayName(name);
+        PotionMeta potionMeta = (PotionMeta) itemMeta;
+        potionMeta.setBasePotionData(effect);
+        if (color != null) potionMeta.setColor(color);
+        lore = (lore != null) ? lore.stream().map(Processes::color).collect(Collectors.toList()) : null;
+        itemMeta.setLore(lore);
+        potion.setItemMeta(itemMeta);
+
+        return potion;
     }
 
 }
