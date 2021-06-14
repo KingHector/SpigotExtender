@@ -131,7 +131,7 @@ public class Processes
     }
 
     /**
-     * Potion Builder
+     * To create Potion ItemStacks.
      * @param name Item name.
      * @param lore Item lore.
      * @param effect Potion effect.
