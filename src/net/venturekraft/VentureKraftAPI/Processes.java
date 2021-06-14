@@ -9,7 +9,6 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.potion.PotionData;
-import org.bukkit.potion.PotionEffect;
 
 import java.util.List;
 import java.util.Objects;
