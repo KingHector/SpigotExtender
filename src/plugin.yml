@@ -1,4 +1,4 @@
 name: SpigotExtender
-main: com.king_hector.SpigotExtender
+main: com.king_hector.SpigotExtender.SpigotExtender
 version: 1.0
 api-version: 1.17
