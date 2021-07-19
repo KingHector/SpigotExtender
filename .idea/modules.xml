@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/VentureKraftAPI.iml" filepath="$PROJECT_DIR$/VentureKraftAPI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpigotExtender.iml" filepath="$PROJECT_DIR$/SpigotExtender.iml" />
     </modules>
   </component>
 </project>

@@ -1,8 +1,8 @@
-package net.venturekraft.VentureKraftAPI;
+package com.king_hector.SpigotExtender;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class VentureKraftAPI extends JavaPlugin
+public class SpigotExtender extends JavaPlugin
 {
 
     public void onEnable()

@@ -1,4 +1,4 @@
-package net.venturekraft.VentureKraftAPI.MenuBuilder;
+package com.king_hector.SpigotExtender.MenuBuilder;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package net.venturekraft.VentureKraftAPI.MenuBuilder;
+package com.king_hector.SpigotExtender.MenuBuilder;
 
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;

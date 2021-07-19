@@ -1,4 +1,4 @@
-package net.venturekraft.VentureKraftAPI;
+package com.king_hector.SpigotExtender;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
