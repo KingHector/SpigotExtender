@@ -32,60 +32,26 @@ public class Processes
      */
     public static Color colorFromString (String color)
     {
-        switch (color)
-        {
-            case "AQUA":
-                return Color.AQUA;
-
-            case "BLACK":
-                return Color.BLACK;
-
-            case "BLUE":
-                return Color.BLUE;
-
-            case "FUCHSIA":
-                return Color.FUCHSIA;
-
-            case "GRAY":
-                return Color.GRAY;
-
-            case "GREEN":
-                return Color.GREEN;
-
-            case "LIME":
-                return Color.LIME;
-
-            case "MAROON":
-                return Color.MAROON;
-
-            case "NAVY":
-                return Color.NAVY;
-
-            case "OLIVE":
-                return Color.OLIVE;
-
-            case "ORANGE":
-                return Color.ORANGE;
-
-            case "PURPLE":
-                return Color.PURPLE;
-
-            case "RED":
-                return Color.RED;
-
-            case "SILVER":
-                return Color.SILVER;
-
-            case "TEAL":
-                return Color.TEAL;
-
-            case "YELLOW":
-                return Color.YELLOW;
-
-            case "WHITE":
-
-            default: return Color.WHITE;
-        }
+        return switch (color)
+                {
+                    case "AQUA" -> Color.AQUA;
+                    case "BLACK" -> Color.BLACK;
+                    case "BLUE" -> Color.BLUE;
+                    case "FUCHSIA" -> Color.FUCHSIA;
+                    case "GRAY" -> Color.GRAY;
+                    case "GREEN" -> Color.GREEN;
+                    case "LIME" -> Color.LIME;
+                    case "MAROON" -> Color.MAROON;
+                    case "NAVY" -> Color.NAVY;
+                    case "OLIVE" -> Color.OLIVE;
+                    case "ORANGE" -> Color.ORANGE;
+                    case "PURPLE" -> Color.PURPLE;
+                    case "RED" -> Color.RED;
+                    case "SILVER" -> Color.SILVER;
+                    case "TEAL" -> Color.TEAL;
+                    case "YELLOW" -> Color.YELLOW;
+                    default -> Color.WHITE;
+                };
     }
 
     /**

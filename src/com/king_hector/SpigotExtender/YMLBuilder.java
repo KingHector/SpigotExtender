@@ -19,7 +19,7 @@ public class YMLBuilder
     {
         this.core = core;
         file = new File(core.getDataFolder(), name + ".yml");
-        config = new YamlConfiguration().loadConfiguration(file);
+        config = YamlConfiguration.loadConfiguration(file);
         createFile();
     }
 

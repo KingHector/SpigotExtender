@@ -1,5 +1,0 @@
-name: SpigotExtender
-main: com.king_hector.SpigotExtender.SpigotExtender
-version: 1.0
-depend: [WorldEdit, WorldGuard]
-api-version: 1.17
