@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
 
+@SuppressWarnings("unused")
 public class Menu
 {
 
@@ -59,7 +60,7 @@ public class Menu
     /**
      * Handles a player opening the inventory. <br>
      * Executes the inventoryOpen consumer if it is not null.
-     * @param player The player who has opened the inventory.
+     * @param player The player who opened the inventory.
      */
     public void handleOpen(Player player)
     {

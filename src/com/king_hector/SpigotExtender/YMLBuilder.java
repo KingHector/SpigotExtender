@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.UncheckedIOException;
 
+@SuppressWarnings("unused")
 public class YMLBuilder
 {
 
@@ -37,8 +38,7 @@ public class YMLBuilder
 
     /**
      * The standard getter for the file variable.
-     *
-     * @return file
+     * @return Returns file.
      */
     public File getFile()
     {
@@ -47,8 +47,7 @@ public class YMLBuilder
 
     /**
      * The standard getter for the config variable.
-     *
-     * @return config
+     * @return Returns config.
      */
     public FileConfiguration getConfig()
     {
@@ -57,7 +56,6 @@ public class YMLBuilder
 
     /**
      * Creates the file including the folder in case they don't exist.
-     *
      * Rethrows the failure.
      */
     private void createFile()

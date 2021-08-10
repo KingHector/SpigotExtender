@@ -15,18 +15,19 @@ import java.util.Objects;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+@SuppressWarnings("unused")
 public class Processes
 {
 
     /**
-     * For use of Colorcodes in any String.
+     * Allows usage of Colorcodes in any String.
      * @param string String to add color to. Add the code at the start.
      * @return Returns color coded String.
      */
     public static String color (String string) { return ChatColor.translateAlternateColorCodes('&', string); }
 
     /**
-     * To get a color from a String for spigot's Color method.
+     * Returns a color from a String for Spigot's Color method.
      * @param color String with the color name.
      * @return Returns the color.
      */
@@ -55,7 +56,7 @@ public class Processes
     }
 
     /**
-     * To create ItemStacks. You cannot use this to create Player Heads, use buildSkull instead.
+     * Creates ItemStacks.
      * @param name Item name.
      * @param lore Item lore.
      * @param material Item material.
@@ -75,7 +76,7 @@ public class Processes
     }
 
     /**
-     * To create Player Heads ItemStacks.
+     * Creates Player Heads ItemStacks.
      * @param name Item name.
      * @param lore Item lore.
      * @param player Head's owner.
@@ -96,7 +97,7 @@ public class Processes
     }
 
     /**
-     * To create Potion ItemStacks.
+     * Creates Potion ItemStacks.
      * @param name Item name.
      * @param lore Item lore.
      * @param effect Potion effect.
@@ -117,6 +118,24 @@ public class Processes
         potion.setItemMeta(itemMeta);
 
         return potion;
+    }
+
+    /**
+     * Checks if given String can be parsed to Integer.
+     * @param string String To Check.
+     * @return Returns True/False.
+     */
+    public static boolean isInteger(String string)
+    {
+        try
+        {
+            Integer.parseInt(string);
+            return true;
+        }
+        catch (NumberFormatException e)
+        {
+            return false;
+        }
     }
 
 }
