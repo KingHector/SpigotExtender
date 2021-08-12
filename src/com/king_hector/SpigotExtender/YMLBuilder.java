@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.UncheckedIOException;
 
 @SuppressWarnings("unused")
+@Deprecated
 public class YMLBuilder
 {
 
@@ -16,6 +17,7 @@ public class YMLBuilder
     private final File file;
     private final FileConfiguration config;
 
+    @Deprecated
     public YMLBuilder(JavaPlugin core, String name)
     {
         this.core = core;
@@ -24,6 +26,7 @@ public class YMLBuilder
         createFile();
     }
 
+    @Deprecated
     public void save()
     {
         try
@@ -40,6 +43,7 @@ public class YMLBuilder
      * The standard getter for the file variable.
      * @return Returns file.
      */
+    @Deprecated
     public File getFile()
     {
         return file;
@@ -49,6 +53,7 @@ public class YMLBuilder
      * The standard getter for the config variable.
      * @return Returns config.
      */
+    @Deprecated
     public FileConfiguration getConfig()
     {
         return config;
@@ -58,6 +63,7 @@ public class YMLBuilder
      * Creates the file including the folder in case they don't exist.
      * Rethrows the failure.
      */
+    @Deprecated
     private void createFile()
     {
         if(!core.getDataFolder().exists())
