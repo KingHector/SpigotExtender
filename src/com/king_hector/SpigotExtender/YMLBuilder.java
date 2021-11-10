@@ -8,7 +8,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.UncheckedIOException;
 
-@SuppressWarnings("unused")
 @Deprecated
 public class YMLBuilder
 {

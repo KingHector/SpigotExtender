@@ -15,10 +15,9 @@ import java.util.Objects;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-@SuppressWarnings("unused")
 public class Processes
 {
-
+    
     /**
      * Allows usage of Colorcodes in any String.
      * @param string String to add color to. Add the code at the start.

@@ -5,7 +5,6 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.function.Consumer;
 
-@SuppressWarnings("unused")
 public class MenuButton
 {
 

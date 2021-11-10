@@ -6,6 +6,8 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
+import net.minecraft.world.level.material.Material;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
@@ -13,7 +15,7 @@ import java.util.function.Consumer;
 @SuppressWarnings("unused")
 public class Menu
 {
-
+    
     private final Inventory inventory;
 
     /**
@@ -28,7 +30,7 @@ public class Menu
             // Invalid rows / title length requested.
             throw new IllegalArgumentException("Invalid arguments passed to menu constructor.");
         }
-
+        
         // Initialise variables
         this.inventory = Bukkit.createInventory(null, rows * 9, title);
         this.buttonMap = new HashMap<>();
