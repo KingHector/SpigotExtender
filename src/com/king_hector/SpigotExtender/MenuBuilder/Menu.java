@@ -12,10 +12,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
 
+import com.king_hector.SpigotExtender.Processes;
+
 @SuppressWarnings("unused")
 public class Menu
 {
-    
+
     private final Inventory inventory;
 
     /**
@@ -30,7 +32,7 @@ public class Menu
             // Invalid rows / title length requested.
             throw new IllegalArgumentException("Invalid arguments passed to menu constructor.");
         }
-        
+       
         // Initialise variables
         this.inventory = Bukkit.createInventory(null, rows * 9, title);
         this.buttonMap = new HashMap<>();
