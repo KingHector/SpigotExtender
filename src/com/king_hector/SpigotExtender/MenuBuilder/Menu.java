@@ -1,18 +1,14 @@
 package com.king_hector.SpigotExtender.MenuBuilder;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Consumer;
+
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
-
-import net.minecraft.world.level.material.Material;
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.function.Consumer;
-
-import com.king_hector.SpigotExtender.Processes;
 
 @SuppressWarnings("unused")
 public class Menu
@@ -22,8 +18,8 @@ public class Menu
 
     /**
      * Menu constructor.
-     * @param title The title of the inventory.
-     * @param rows The amount of rows in the inventory.
+     * @param title Inventory name.
+     * @param rows Inventory rows.
      */
     public Menu(String title, int rows)
     {
@@ -42,8 +38,8 @@ public class Menu
 
     /**
      * Registers a button in a specified slot.
-     * @param button The button object to register.
-     * @param slot The slot to associate it with.
+     * @param button Button to register.
+     * @param slot The slot to associate with the button.
      */
     public void registerButton(MenuButton button, int slot)
     {
@@ -54,7 +50,7 @@ public class Menu
 
     /**
      * Sets the value of the inventoryOpened consumer.
-     * @param inventoryOpened The consumer to use.
+     * @param inventoryOpened Consumer.
      */
     public void setInventoryOpened(Consumer<Player> inventoryOpened)
     {
@@ -64,7 +60,7 @@ public class Menu
     /**
      * Handles a player opening the inventory. <br>
      * Executes the inventoryOpen consumer if it is not null.
-     * @param player The player who opened the inventory.
+     * @param player Player who opened the Inventory.
      */
     public void handleOpen(Player player)
     {
@@ -79,7 +75,7 @@ public class Menu
 
     /**
      * Sets the value of the inventoryClosed consumer.
-     * @param inventoryClosed The consumer to use.
+     * @param inventoryClosed Consumer.
      */
     public void setInventoryClosed(Consumer<Player> inventoryClosed)
     {
@@ -89,7 +85,7 @@ public class Menu
     /**
      * Handles a player closing the inventory. <br>
      * Executes the inventoryClosed consumer if it is not null.
-     * @param player The player who has closed the inventory.
+     * @param player Player who closed the Inventory.
      */
     public void handleClose(Player player)
     {
@@ -129,7 +125,7 @@ public class Menu
 
     /**
      * Opens the inventory to a specified player.
-     * @param player The player to open the inventory to.
+     * @param player Player to open the inventory to.
      */
     public void open(Player player)
     {

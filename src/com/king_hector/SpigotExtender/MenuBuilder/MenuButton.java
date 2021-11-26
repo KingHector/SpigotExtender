@@ -1,9 +1,9 @@
 package com.king_hector.SpigotExtender.MenuBuilder;
 
+import java.util.function.Consumer;
+
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-
-import java.util.function.Consumer;
 
 public class MenuButton
 {
@@ -12,7 +12,7 @@ public class MenuButton
 
     /**
      * Class constructor
-     * @param itemStack The ItemStack to use for this button.
+     * @param itemStack ItemStack to use.
      */
     public MenuButton(ItemStack itemStack)
     {
@@ -21,7 +21,7 @@ public class MenuButton
 
     /**
      * Returns the value of the whenClicked consumer.
-     * @return The whenClicked consumer.
+     * @return whenClicked consumer.
      */
     public Consumer<Player> getWhenClicked()
     {

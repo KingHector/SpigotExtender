@@ -1,7 +1,6 @@
 package com.king_hector.SpigotExtender;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -19,9 +18,9 @@ public class Processes
 {
     
     /**
-     * Allows usage of Colorcodes in any String.
-     * @param string String to add color to. Add the code at the start.
-     * @return Returns color coded String.
+     * Allows usage of Color Codes in any String.
+     * @param string String to add color to. Add the Color Code at the start.
+     * @return Returns the Color Coded String.
      */
     public static String color (String string) { return ChatColor.translateAlternateColorCodes('&', string); }
 
@@ -67,7 +66,7 @@ public class Processes
     {
         ItemStack item = new ItemStack(material, quantity);
         ItemMeta itemMeta = item.getItemMeta();
-        Objects.requireNonNull(itemMeta).setDisplayName(color(name));
+        itemMeta.setDisplayName(color(name));
         lore = (lore != null) ? lore.stream().map(Processes::color).collect(Collectors.toList()) : null;
         itemMeta.setLore(lore);
         itemMeta.setCustomModelData(customModelData);
@@ -89,8 +88,8 @@ public class Processes
     {
         ItemStack playerSkull = new ItemStack(Material.PLAYER_HEAD, quantity);
         SkullMeta skullMeta = (SkullMeta) playerSkull.getItemMeta();
-        Objects.requireNonNull(skullMeta).setDisplayName(name);
-        Objects.requireNonNull(skullMeta).setOwningPlayer(Bukkit.getOfflinePlayer(player));
+        skullMeta.setDisplayName(name);
+        skullMeta.setOwningPlayer(Bukkit.getOfflinePlayer(player));
         lore = (lore != null) ? lore.stream().map(Processes::color).collect(Collectors.toList()) : null;
         skullMeta.setLore(lore);
         skullMeta.setCustomModelData(customModelData);
@@ -113,7 +112,7 @@ public class Processes
     {
         ItemStack potion = new ItemStack(Material.POTION, quantity);
         ItemMeta itemMeta = potion.getItemMeta();
-        Objects.requireNonNull(itemMeta).setDisplayName(color(name));
+        itemMeta.setDisplayName(color(name));
         PotionMeta potionMeta = (PotionMeta) itemMeta;
         potionMeta.setBasePotionData(effect);
         if (color != null) potionMeta.setColor(color);

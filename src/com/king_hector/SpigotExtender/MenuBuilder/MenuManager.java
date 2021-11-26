@@ -40,7 +40,7 @@ public class MenuManager
 
     /**
      * Unregister a menu.
-     * @param toUnRegister The user's menu to unregister.
+     * @param toUnRegister User's menu to unregister.
      */
     public void unregisterMenu(UUID toUnRegister)
     {
@@ -49,7 +49,7 @@ public class MenuManager
 
     /**
      * Find a menu.
-     * @param user The user to search for.
+     * @param user User to search for.
      * @return The Menu found, or null if it does not exist.
      */
     public Menu matchMenu(UUID user) { return openMenus.get(user); }

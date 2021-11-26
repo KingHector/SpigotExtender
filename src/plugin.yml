@@ -2,5 +2,5 @@ name: SpigotExtender
 description: Minecraft library/plugin that extends SpigotAPI with some useful methods.
 main: com.king_hector.SpigotExtender.SpigotExtender
 author: King_Hector
-version: 1.0
+version: 1.3
 api-version: 1.17
