@@ -1,2 +1,5 @@
-**/.vscode/
-**/.settings/
+.idea/
+out/
+cmake-build-*/
+*.iws
+*.iml

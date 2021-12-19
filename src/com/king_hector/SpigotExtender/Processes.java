@@ -14,6 +14,7 @@ import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.potion.PotionData;
 
+@SuppressWarnings("unused")
 public class Processes
 {
     
@@ -66,12 +67,14 @@ public class Processes
     {
         ItemStack item = new ItemStack(material, quantity);
         ItemMeta itemMeta = item.getItemMeta();
-        itemMeta.setDisplayName(color(name));
-        lore = (lore != null) ? lore.stream().map(Processes::color).collect(Collectors.toList()) : null;
-        itemMeta.setLore(lore);
-        itemMeta.setCustomModelData(customModelData);
-        item.setItemMeta(itemMeta);
-
+        if (itemMeta != null)
+        {
+            itemMeta.setDisplayName(color(name));
+            lore = (lore != null) ? lore.stream().map(Processes::color).collect(Collectors.toList()) : null;
+            itemMeta.setLore(lore);
+            itemMeta.setCustomModelData(customModelData);
+            item.setItemMeta(itemMeta);
+        }
         return item;
     }
 
@@ -88,12 +91,15 @@ public class Processes
     {
         ItemStack playerSkull = new ItemStack(Material.PLAYER_HEAD, quantity);
         SkullMeta skullMeta = (SkullMeta) playerSkull.getItemMeta();
-        skullMeta.setDisplayName(name);
-        skullMeta.setOwningPlayer(Bukkit.getOfflinePlayer(player));
-        lore = (lore != null) ? lore.stream().map(Processes::color).collect(Collectors.toList()) : null;
-        skullMeta.setLore(lore);
-        skullMeta.setCustomModelData(customModelData);
-        playerSkull.setItemMeta(skullMeta);
+        if (skullMeta != null)
+        {
+            skullMeta.setDisplayName(name);
+            skullMeta.setOwningPlayer(Bukkit.getOfflinePlayer(player));
+            lore = (lore != null) ? lore.stream().map(Processes::color).collect(Collectors.toList()) : null;
+            skullMeta.setLore(lore);
+            skullMeta.setCustomModelData(customModelData);
+            playerSkull.setItemMeta(skullMeta);
+        }
 
         return playerSkull;
     }
@@ -112,14 +118,17 @@ public class Processes
     {
         ItemStack potion = new ItemStack(Material.POTION, quantity);
         ItemMeta itemMeta = potion.getItemMeta();
-        itemMeta.setDisplayName(color(name));
-        PotionMeta potionMeta = (PotionMeta) itemMeta;
-        potionMeta.setBasePotionData(effect);
-        if (color != null) potionMeta.setColor(color);
-        lore = (lore != null) ? lore.stream().map(Processes::color).collect(Collectors.toList()) : null;
-        itemMeta.setLore(lore);
-        itemMeta.setCustomModelData(customModelData);
-        potion.setItemMeta(itemMeta);
+        if (itemMeta != null)
+        {
+            itemMeta.setDisplayName(color(name));
+            PotionMeta potionMeta = (PotionMeta) itemMeta;
+            potionMeta.setBasePotionData(effect);
+            if (color != null) potionMeta.setColor(color);
+            lore = (lore != null) ? lore.stream().map(Processes::color).collect(Collectors.toList()) : null;
+            itemMeta.setLore(lore);
+            itemMeta.setCustomModelData(customModelData);
+            potion.setItemMeta(itemMeta);
+        }
 
         return potion;
     }
