@@ -1,5 +1,7 @@
 .idea/
 out/
+src/test/
+target/
 cmake-build-*/
 *.iws
 *.iml
