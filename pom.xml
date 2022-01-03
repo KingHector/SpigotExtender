@@ -2,8 +2,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
 
+    <modelVersion>4.0.0</modelVersion>
     <groupId>com.king_hector.SpigotExtender</groupId>
     <artifactId>SpigotExtender</artifactId>
     <version>1.4</version>
@@ -20,8 +20,19 @@
         </plugins>
     </build>
 
+    <name>SpigotExtender</name>
+    <description>Minecraft library/plugin that extends SpigotAPI with some useful methods.</description>
+    <url>https://github.com/KingHector/SpigotExtender</url>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://github.com/KingHector/SpigotExtender/blob/master/LICENSE</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
     <repositories>
-        <!-- This adds the Spigot Maven repository to the build -->
         <repository>
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
@@ -29,7 +40,6 @@
     </repositories>
 
     <dependencies>
-        <!--This adds the Spigot API artifact to the build -->
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
@@ -38,5 +48,4 @@
         </dependency>
     </dependencies>
 
-    
 </project>
