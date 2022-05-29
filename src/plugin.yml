@@ -3,4 +3,4 @@ description: Minecraft library/plugin that extends SpigotAPI with some useful me
 main: com.king_hector.SpigotExtender.SpigotExtender
 author: King_Hector
 version: 1.3
-api-version: 1.18
+api-version: 1.17
