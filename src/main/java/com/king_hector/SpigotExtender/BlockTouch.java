@@ -14,6 +14,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.FireworkMeta;
+import org.bukkit.plugin.Plugin;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -39,8 +40,9 @@ public class BlockTouch
      * Enables the Block Touch Progress Bar.
      * If this is enabled `convertTouchedBlocks()` will update the progress bar as the Player converts new blocks.
      * This method is designed to be called from a PlayerJoinEvent method but can be called from other places as well.
-     * If this is Enabled, run on the server, and then Disabled, you need to delete `blockTouch.yml` from your set fileLocation or slight problems may arise.
+     * If this is Enabled, run on the server, and then Disabled, you need to delete `blockTouch.yml` from your plugin folder or slight problems may arise.
      * @param player The Player to assign the bar to.
+     * @param plugin Your main plugin instance.
      * @param title The Progress Bar Title.
      * @param barColor The Progress Bar Color.
      * @param barStyle The Progress Bar Style.
@@ -48,10 +50,10 @@ public class BlockTouch
      * @param finalBarColor The Progress Bar Color after completion.
      * @param finalBarStyle The Progress Bar Style after completion.
      */
-    public static void blockTouchProgressBarEnable(Player player, String fileLocation, String title, BarColor barColor, BarStyle barStyle, String finalTitle, BarColor finalBarColor, BarStyle finalBarStyle)
+    public static void blockTouchProgressBarEnable(Player player, Plugin plugin, String title, BarColor barColor, BarStyle barStyle, String finalTitle, BarColor finalBarColor, BarStyle finalBarStyle)
     {
         //File Initialization
-        File blockTouch = new File(fileLocation, "blockTouch.yml");
+        File blockTouch = new File(plugin.getDataFolder(), "blockTouch.yml");
         YamlConfiguration modifyBlockTouch = YamlConfiguration.loadConfiguration(blockTouch);
 
         if (!blockTouch.exists())
@@ -69,16 +71,17 @@ public class BlockTouch
         progressBar.addPlayer(player);
         progressBar.setProgress(modifyBlockTouch.getDouble("Progress"));
 
+        //Finished Progress Bar Setup
+        progressBarFinished.setTitle(finalTitle);
+        progressBarFinished.setColor(finalBarColor);
+        progressBarFinished.setStyle(finalBarStyle);
+        progressBarFinished.setProgress(1);
+
         //Changes the Progress Bar to the Finished bar if a Player connects/reconnects when the Progress Bar has reached 100%
         if (progressBar.getProgress() == 1)
         {
             progressBar.removePlayer(player);
-
-            progressBarFinished.setTitle(finalTitle);
-            progressBarFinished.setColor(finalBarColor);
-            progressBarFinished.setStyle(finalBarStyle);
             progressBarFinished.addPlayer(player);
-            progressBarFinished.setProgress(1);
         }
 
         //Adds Player to the playerList
@@ -87,6 +90,7 @@ public class BlockTouch
 
     /**
      * Disables the Block Touch Progress Bar.
+     * * This method is designed to be called from a PlayerQuitEvent method but can be called from other places as well.
      */
     public static void blockTouchProgressBarDisable()
     {
@@ -102,8 +106,9 @@ public class BlockTouch
      * @param previousBlock `event.getFrom().getBlock()` should be assigned here.
      * @param nextBlock `event.getTo().getBlock()` should be assigned here.
      * @param blocksToExclude A list of Blocks to exclude from converting.
+     * @param plugin Your main plugin instance.
      */
-    public static void convertTouchedBlocks(Player player, Material block, Block previousBlock, Block nextBlock, List<Material> blocksToExclude)
+    public static void convertTouchedBlocks(Player player, Material block, Block previousBlock, Block nextBlock, List<Material> blocksToExclude, Plugin plugin)
     {
         int blockLocation = player.getLocation().getBlockY() - 1;
         Block blockUnderPlayer = player.getWorld().getBlockAt(player.getLocation().getBlockX(), blockLocation, player.getLocation().getBlockZ());
@@ -124,6 +129,9 @@ public class BlockTouch
 
         //Set block under player to specified block
         blockUnderPlayer.setType(block);
+
+        //Increase Progress Bar if enabled
+        addBarProgress(0.001, true, plugin);
     }
 
     /**
@@ -134,8 +142,9 @@ public class BlockTouch
      * @param slot `event.getPreviousSlot()` or `event.getNewSlot()` should be assigned here. In order for the method to work as intended it should be called twice, each time using each specified argument.
      * @param itemsToExclude A list of Items to exclude from converting.
      * @param convertibleItems A map of Items that can be converted to other Items when Player holds them. The Key of the map is the Item that will be converted, the Value of the map is the Item that the first Item will be converted to.
+     * @param plugin Your main plugin instance.
      */
-    public static void convertTouchedItems(Player player, Material item, int slot, List<Material> itemsToExclude, List<ItemStack> customItemsToExclude, Map<ItemStack, ItemStack> convertibleItems)
+    public static void convertTouchedItems(Player player, Material item, int slot, List<Material> itemsToExclude, List<ItemStack> customItemsToExclude, Map<ItemStack, ItemStack> convertibleItems, Plugin plugin)
     {
         PlayerInventory playerInventory = player.getInventory();
         ItemStack slotItem = playerInventory.getItem(slot);
@@ -158,33 +167,39 @@ public class BlockTouch
         }
 
         //Set holding convertable items to their specified item
-        for (ItemStack c : convertibleItems.keySet())
+        if (convertibleItems != null)
         {
-            ItemStack newItem = convertibleItems.get(c);
-            if (slotItem.equals(newItem)) return;
-
-            if (slotItem.getType().equals(c.getType()))
+            for (ItemStack c : convertibleItems.keySet())
             {
-                slotItem.setType(newItem.getType());
-                slotItem.setItemMeta(newItem.getItemMeta());
-                return;
+                ItemStack newItem = convertibleItems.get(c);
+                if (slotItem.equals(newItem)) return;
+
+                if (slotItem.getType().equals(c.getType()))
+                {
+                    slotItem.setType(newItem.getType());
+                    slotItem.setItemMeta(newItem.getItemMeta());
+                    return;
+                }
             }
         }
 
         //Set holding item to specified item
         slotItem.setType(item);
+
+        //Increase Progress Bar if enabled
+        addBarProgress(0.001, true, plugin);
     }
 
     /**
      * Adds a specified amount of Progress to the Progress Bar.
      * @param amount The amount to add. Assign something small as when the bar reaches 1 it is filled.
      * @param playEffects Set whether the completion particles and sounds should be played.
-     * @param fileLocation The location of the `blockTouch.yml` you've set.
+     * @param plugin Your main plugin instance.
      */
-    public static void addBarProgress(double amount, boolean playEffects, String fileLocation)
+    public static void addBarProgress(double amount, boolean playEffects, Plugin plugin)
     {
         //File Initialization
-        File blockTouch = new File(fileLocation, "blockTouch.yml");
+        File blockTouch = new File(plugin.getDataFolder(), "blockTouch.yml");
         YamlConfiguration modifyBlockTouch = YamlConfiguration.loadConfiguration(blockTouch);
 
         //Stop if Progress Bar is disabled or if Progress Bar is complete
@@ -195,10 +210,12 @@ public class BlockTouch
         double oldProgress = modifyBlockTouch.getDouble("Progress");
         modifyBlockTouch.set("Progress", oldProgress + amount);
         double newProgress = modifyBlockTouch.getDouble("Progress");
+        Processes.saveFileChanges(blockTouch, modifyBlockTouch);
 
         if (newProgress >= 1) //Completed Progress Bar
         {
             modifyBlockTouch.set("Progress", 1);
+            Processes.saveFileChanges(blockTouch, modifyBlockTouch);
             progressBar.setProgress(1);
             progressBar.removeAll();
 
