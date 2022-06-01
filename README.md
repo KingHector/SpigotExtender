@@ -13,4 +13,4 @@ For more information visit the [Wiki](https://github.com/VentureKraftDevs/Spigot
 
 ***
 
-Special thanks to Geppy.
+Special thanks to [Gepsu](https://github.com/Gepsu).
