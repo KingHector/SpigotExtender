@@ -1,10 +1,4 @@
-package com.king_hector.SpigotExtender;
-
-import java.io.File;
-import java.io.IOException;
-import java.util.List;
-import java.util.UUID;
-import java.util.stream.Collectors;
+package com.king_hector.spigotextender;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -17,10 +11,16 @@ import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.potion.PotionData;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+import java.util.UUID;
+import java.util.stream.Collectors;
+
 @SuppressWarnings("unused")
 public class Processes
 {
-    
+
     /**
      * Allows usage of Color Codes in any String.
      * @param string String to add color to. Add the Color Code at the start.
@@ -36,25 +36,25 @@ public class Processes
     public static Color colorFromString (String color)
     {
         return switch (color)
-        {
-            case "AQUA" -> Color.AQUA;
-            case "BLACK" -> Color.BLACK;
-            case "BLUE" -> Color.BLUE;
-            case "FUCHSIA" -> Color.FUCHSIA;
-            case "GRAY" -> Color.GRAY;
-            case "GREEN" -> Color.GREEN;
-            case "LIME" -> Color.LIME;
-            case "MAROON" -> Color.MAROON;
-            case "NAVY" -> Color.NAVY;
-            case "OLIVE" -> Color.OLIVE;
-            case "ORANGE" -> Color.ORANGE;
-            case "PURPLE" -> Color.PURPLE;
-            case "RED" -> Color.RED;
-            case "SILVER" -> Color.SILVER;
-            case "TEAL" -> Color.TEAL;
-            case "YELLOW" -> Color.YELLOW;
-            default -> Color.WHITE;
-        };
+                {
+                    case "AQUA" -> Color.AQUA;
+                    case "BLACK" -> Color.BLACK;
+                    case "BLUE" -> Color.BLUE;
+                    case "FUCHSIA" -> Color.FUCHSIA;
+                    case "GRAY" -> Color.GRAY;
+                    case "GREEN" -> Color.GREEN;
+                    case "LIME" -> Color.LIME;
+                    case "MAROON" -> Color.MAROON;
+                    case "NAVY" -> Color.NAVY;
+                    case "OLIVE" -> Color.OLIVE;
+                    case "ORANGE" -> Color.ORANGE;
+                    case "PURPLE" -> Color.PURPLE;
+                    case "RED" -> Color.RED;
+                    case "SILVER" -> Color.SILVER;
+                    case "TEAL" -> Color.TEAL;
+                    case "YELLOW" -> Color.YELLOW;
+                    default -> Color.WHITE;
+                };
     }
 
     /**

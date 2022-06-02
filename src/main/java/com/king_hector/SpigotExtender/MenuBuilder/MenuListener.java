@@ -1,4 +1,4 @@
-package com.king_hector.SpigotExtender.MenuBuilder;
+package com.king_hector.spigotextender.MenuBuilder;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

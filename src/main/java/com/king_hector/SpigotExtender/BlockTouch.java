@@ -1,4 +1,4 @@
-package com.king_hector.SpigotExtender;
+package com.king_hector.spigotextender;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Color;

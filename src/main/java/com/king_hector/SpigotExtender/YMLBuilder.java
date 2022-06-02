@@ -1,4 +1,4 @@
-package com.king_hector.SpigotExtender;
+package com.king_hector.spigotextender;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;

@@ -1,4 +1,4 @@
-package com.king_hector.SpigotExtender.MenuBuilder;
+package com.king_hector.spigotextender.MenuBuilder;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,7 +28,7 @@ public class Menu
             // Invalid rows / title length requested.
             throw new IllegalArgumentException("Invalid arguments passed to menu constructor.");
         }
-       
+
         // Initialise variables
         this.inventory = Bukkit.createInventory(null, rows * 9, title);
         this.buttonMap = new HashMap<>();
